@@ -43,7 +43,7 @@ img {
 }
 
 .header {
-    background-image: url(Imagenes/findobien.png);
+    background-image: url(Imagenes/fondo-quimica.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,7 +64,7 @@ img {
 }
 
 .logo {
-    color: #ff5a2c;
+    color: #d8852f;
     font-size: 25px;
     font-weight: 800;
     text-transform: uppercase;

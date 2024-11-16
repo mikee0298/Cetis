@@ -84,7 +84,7 @@ img {
 }
 
 .menu .navbar ul li a:hover {
-  color: #ff5a2c;
+  color: #10037e;
 }
 
 #menu {
@@ -121,7 +121,7 @@ img {
 }
 
 .header-txt span {
-  color: #ff5a2c;
+  color: #10037e;
 }
 
 .header-txt p {
@@ -140,7 +140,7 @@ img {
 .btn-3 {
   display: inline-block;
   padding: 11px 35px;
-  border: 2px solid #ff5a2c;
+  border: 2px solid #10037e;
   border-radius: 25px;
   margin-right: 25px;
   font-size: 17px;
@@ -148,7 +148,7 @@ img {
 }
 
 .btn-1:hover {
-  background-color: #ff5a2c;
+  background-color: #1872f8;
 }
 
 .popular {
@@ -157,7 +157,7 @@ img {
 }
 
 .h2 {
-  color: #ffffff;
+  color: #10037e;
   font-size: 35px;
   margin-bottom: 45px;
   margin-top: 45px;

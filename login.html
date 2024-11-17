@@ -3,37 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro</title>
+    <title>Login</title>
     <link rel="stylesheet" href="loginstyle.css" />
   </head>
   <body>
     <div transition-style="in:polygon:opposing-corners">
       <div class="login-box">
-        <h2>Registro</h2>
-        <form action="register_user.php" method="POST">
+        <h2>Inicio de sesión</h2>
+        <form action="login.php" method="POST">
           <div class="user-box">
-            <input type="email" name="email" required />
-            <label>Correo Electrónico</label>
+            <input type="text" name="username" required />
+            <label>Usuario</label>
           </div>
           <div class="user-box">
             <input type="password" name="password" required />
             <label>Contraseña</label>
           </div>
-          <div class="user-box">
-            <input type="password" name="confirm_password" required />
-            <label>Confirmar Contraseña</label>
-          </div>
-          <button type="submit">
+          <a href="#" onclick="document.forms[0].submit();">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Registrar
-          </button>
+            Iniciar sesión
+          </a>
         </form>
-        <p>
-          ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
-        </p>
+        <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
       </div>
       <main></main>
     </div>

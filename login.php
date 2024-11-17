@@ -6,6 +6,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // Validar que el correo tiene un formato válido
+    if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+        die("Por favor, ingresa un correo electrónico válido.");
+    }
+
     // Validar que la contraseña cumple con los requisitos
     if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password) || !preg_match('/[0-9]/', $password)) {
         die("La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un número.");
@@ -21,17 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->fetch()) {
         // Verificar la contraseña usando password_verify
         if (password_verify($password, $password_hash)) {
-            echo "Inicio de sesión exitoso. ¡Bienvenido, $username!";
+            echo "Inicio de sesión exitoso. ¡Bienvenido!";
             // Aquí puedes iniciar una sesión o redirigir al usuario
             session_start();
             $_SESSION['username'] = $username;
-            header("Location: index.html"); // Redirige al usuario después de un inicio exitoso
+            header("Location: index.html");
             exit();
         } else {
             echo "Contraseña incorrecta.";
         }
     } else {
-        echo "El nombre de usuario no existe.";
+        // Si no existe el correo, mostrar mensaje con enlace a registro
+        echo "El correo no está registrado. <a href='register.php'>Crear una cuenta</a>";
     }
 
     $stmt->close();

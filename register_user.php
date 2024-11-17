@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Validar que las contraseñas coinciden
-    if ($password !== $confirm_password) {
+    if ($_POST['password'] !== $_POST['confirm_password']) {
         die("Las contraseñas no coinciden. Por favor, intenta de nuevo.");
     }
 

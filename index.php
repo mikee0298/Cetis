@@ -1,3 +1,14 @@
+<?php
+session_start();  // Inicia la sesión PHP
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['username'])) {
+    // Si no hay sesión activa, redirigir al usuario al login
+    header("Location: login.html");
+    exit();  // Detener la ejecución del código
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +19,7 @@
 </head>
 <body>
     <div transition-style="in:polygon:opposing-corners">
-    <header class="header-index">
+    <header class="header">
         <div class="menu container">
             <img src="Imagenes/Logo_cordero_Azul.png" width="60" height="60" class="imglogo">
             <input type="checkbox" id="menu" />
@@ -20,7 +31,13 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="grupos.html">Grupos</a></li>
                     <li><a href="mediciones.html">Mediciones</a></li>
-                    <li><a href="login.html">Inicio de sesión</a></li>
+                     <!-- Si el usuario está logueado, mostrar el enlace para cerrar sesión -->
+                     <?php if (isset($_SESSION['username'])): ?>
+                        <li><a href="logout.php">Cerrar sesión</a></li>
+                    <?php else: ?>
+                        <!-- Si no está logueado, mostrar el enlace para iniciar sesión -->
+                        <li><a href="login.html">Inicio de sesión</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
@@ -40,45 +57,6 @@
 
     </header>
 
-    <!--<section class="popular container">
-        <h2 class="h2">Personajes populares</h2 class="h2">
-    
-        <div id="carousel">
-
-            <div class="hideLeft">
-             <img src="Imagenes/sinfondo/gata2.png">
-           </div>
-     
-           <div class="prevLeftSecond">
-             <img src="Imagenes/sinfondo/naranja.png">
-           </div>
-     
-           <div class="prev">
-             <img src="Imagenes/sinfondo/rubia.png">
-           </div>
-     
-           <div class="selected">
-             <img src="Imagenes/sinfondo/Ruby.png">
-           </div>
-     
-           <div class="next">
-             <img src="Imagenes/sinfondo/gata.png">
-           </div>
-     
-           <div class="nextRightSecond">
-             <img src="Imagenes/sinfondo/blanquita.png">
-           </div>
-     
-           <div class="hideRight">
-             <img src="Imagenes/sinfondo/martillo.png">
-           </div>
-     
-         </div>
-     
-
-    </section>-->
-
-    
     </main>
 
     <section class="contact container">
